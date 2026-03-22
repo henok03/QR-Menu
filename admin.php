@@ -207,6 +207,7 @@ $menuItems = $pdo->query("SELECT * FROM menu_items ORDER BY id DESC")->fetchAll(
 
   <div id="view-items" class="tab-content">
     <h2>Your Menu</h2>
+
     <p class="subtitle">Edit prices and manage your digital catalog.</p>
 
     <div class="search-container" style="margin-bottom: 25px;">
@@ -240,6 +241,7 @@ $menuItems = $pdo->query("SELECT * FROM menu_items ORDER BY id DESC")->fetchAll(
                         <button class="btn btn-edit" onclick="window.location.href='edit.php?id=<?php echo $item['id']; ?>'">Edit</button>
                         <button class="btn btn-delete" onclick="if(confirm('Delete?')) window.location.href='delete.php?id=<?php echo $item['id']; ?>'">Delete</button>
                     </div>
+                    
                 </div>
             </div>
             <?php endforeach; ?>
@@ -287,16 +289,19 @@ $menuItems = $pdo->query("SELECT * FROM menu_items ORDER BY id DESC")->fetchAll(
         </form>
     </div>
 </div>
-        <div id="settings" class="tab-content">
-            <div class="card">
-                <h2>Security</h2>
-                <p class="subtitle">Update your admin login details.</p>
-                <form action="change_pass.php" method="POST">
-                    <div class="input-group"><label>New Password</label><input type="password" name="new_pass" required></div>
-                    <button type="submit" class="btn-submit" style="background:#3b82f6">Update Security</button>
-                </form>
+       <div id="settings" class="tab-content">
+    <div class="card">
+        <h2>Security</h2>
+        <p class="subtitle">Enter a new password to update your login.</p>
+        <form action="change_pass.php" method="POST">
+            <div class="input-group">
+                <label>New Password</label>
+                <input type="password" name="new_pass" placeholder="Enter new password" required>
             </div>
-        </div>
+            <button type="submit" class="btn-submit" style="background:#3b82f6">Update Password Now</button>
+        </form>
+    </div>
+</div>
 
     </div>
 
