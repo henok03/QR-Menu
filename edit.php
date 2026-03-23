@@ -1,30 +1,66 @@
 <?php
 session_start();
-include 'db.php';
+include 'db.php'; 
 
-// Security check (Important: Add this to keep unauthorized people out)
 if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit();
 }
 
-if (!isset($_GET['id'])) { header("Location: admin.php"); exit(); }
+if (!isset($_GET['id'])) { 
+    header("Location: admin.php"); 
+    exit(); 
+}
 
 $id = $_GET['id'];
 $stmt = $pdo->prepare("SELECT * FROM menu_items WHERE id = ?");
 $stmt->execute([$id]);
 $item = $stmt->fetch();
 
-if (!$item) { echo "Item not found."; exit(); }
+if (!$item) { 
+    echo "Item not found."; 
+    exit(); 
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $price = $_POST['price'];
     $category = $_POST['category'];
     $desc = $_POST['description'];
+    
+    $image_path = $item['image_path']; 
 
-    $sql = "UPDATE menu_items SET name=?, price=?, category=?, description=? WHERE id=?";
-    $pdo->prepare($sql)->execute([$name, $price, $category, $desc, $id]);
+    // FIXED: List is now at the top so PHP sees it!
+    $allowed_exts = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $file_name = $_FILES['image']['name'];
+        $file_tmp_name = $_FILES['image']['tmp_name'];
+        $file_size = $_FILES['image']['size'];
+        $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+        if (in_array($file_ext, $allowed_exts)) {
+            if ($file_size < 5000000) {
+                $new_file_name = uniqid('img_', true) . '.' . $file_ext;
+                $upload_dir = 'uploads/';
+
+                if (!is_dir($upload_dir)) {
+                    mkdir($upload_dir, 0777, true);
+                }
+
+                if (move_uploaded_file($file_tmp_name, $upload_dir . $new_file_name)) {
+                    // Delete old image file to save space
+                    if (!empty($item['image_path']) && file_exists($item['image_path'])) {
+                        unlink($item['image_path']);
+                    }
+                    $image_path = $upload_dir . $new_file_name;
+                }
+            }
+        }
+    }
+
+    $sql = "UPDATE menu_items SET name=?, price=?, category=?, description=?, image_path=? WHERE id=?";
+    $pdo->prepare($sql)->execute([$name, $price, $category, $desc, $image_path, $id]);
 
     header("Location: admin.php?updated=1");
     exit();
@@ -75,7 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         h2 i { color: var(--accent); }
 
         .form-group { margin-bottom: 20px; }
-
         label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-secondary); }
 
         input, select, textarea { 
@@ -91,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input:focus, select:focus, textarea:focus { border-color: var(--accent); }
-
         textarea { resize: vertical; min-height: 100px; }
 
         .btn-group { display: flex; flex-direction: column; gap: 10px; margin-top: 30px; }
@@ -117,18 +151,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 14px;
             padding: 10px;
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 480px) {
-            .edit-card { padding: 20px; border-radius: 16px; }
-            h2 { font-size: 20px; }
-        }
     </style>
 </head>
 <body>
     <div class="edit-card">
         <h2><i class="fas fa-edit"></i> Edit Item</h2>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Item Name</label>
                 <input type="text" name="name" value="<?php echo htmlspecialchars($item['name']); ?>" required>
@@ -154,12 +182,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label>Description</label>
                 <textarea name="description"><?php echo htmlspecialchars($item['description']); ?></textarea>
             </div>
-            
+<div class="form-group">
+    <label>Current Image</label>
+    <?php if (!empty($item['image_path'])): ?>
+        <img src="<?php echo $item['image_path']; ?>" style="width: 120px; border-radius: 12px; margin-bottom: 10px; border: 1px solid var(--border);">
+    <?php else: ?>
+        <p style="font-size: 12px; color: var(--text-secondary);">No image uploaded.</p>
+    <?php endif; ?>
+    
+    <label>Change Image</label>
+    <input type="file" name="image" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp">
+    <p style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;">Leave blank to keep the current image.</p>
+</div>
             <div class="btn-group">
                 <button type="submit" class="save-btn">Update Details</button>
                 <a href="admin.php" class="cancel-btn">Back to Dashboard</a>
             </div>
         </form>
     </div>
+    
 </body>
 </html>
