@@ -640,7 +640,7 @@ const translations = {
         'add_title': 'አዲስ እቃ', 'lbl_item_name': 'የእቃው ስም', 'lbl_category': 'ምድብ',
         'lbl_price': 'ዋጋ (ብር)', 'lbl_desc': 'መግለጫ', 'lbl_image': 'ምስል', 'btn_save': 'ምርቱን አስቀምጥ',
         'sec_title': 'ደህንነት', 'sec_subtitle': 'መግቢያዎን ለማዘመን አዲስ የይለፍ ቃል ያስገቡ።',
-        'lbl_new_pass': 'አዲስ የይለፍ ቃል', 'btn_update_pass': 'የይለፍ ቃል አሁን ከይር'
+        'lbl_new_pass': 'አዲስ የይለፍ ቃል', 'btn_update_pass': 'የይለፍ ቃል አሁን አዘምን'
     }
 };
 
