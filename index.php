@@ -17,41 +17,7 @@ $items = $stmt->fetchAll();
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
-                    colors: {
-                        primary: '#FF9F1C', 
-                        secondary: '#2EC4B6', 
-                        darkBg: '#1a1a1a',
-                        lightBg: '#f8f9fa'
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.4s ease-out',
-                        'fade-in': 'fadeIn 0.3s ease-out',
-                        'slide-in': 'slideIn 0.3s ease-out'
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        slideIn: {
-                            '0%': { transform: 'translateX(-10px)', opacity: '0' },
-                            '100%': { transform: 'translateX(0)', opacity: '1' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+
     
     <style>
         body { transition: background-color 0.3s, color 0.3s; }
@@ -115,7 +81,11 @@ $items = $stmt->fetchAll();
     <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm px-4 py-3">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold text-primary tracking-tighter">
-                <i class="fas fa-qrcode "></i>QR<span class="text-gray-800 dark:text-white">Menu</span>
+     <img src="Gemini_Generated_Image_jl53kgjl53kgjl53-removebg-preview.png" 
+     alt="PandaKitchen Logo" 
+     style="height: 40px; width: auto; object-fit: contain;">
+     
+Panda<span class="text-gray-800 dark:text-white">Kitchen</span>
             </h1>
             
             <div class="flex items-center gap-3">
@@ -126,8 +96,8 @@ $items = $stmt->fetchAll();
                 
                 <!-- Language Switcher -->
                 <select id="langSwitch" onchange="changeLanguage()" class="bg-transparent border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-                    <option value="en">EN</option>
-                    <option value="am">አማ</option>
+                    <option value="en" style="color: goldenrod;">EN</option>
+                    <option value="am" style="color: goldenrod;">አማ</option>
                 </select>
 
                 <!-- Dark Mode Toggle -->
@@ -151,7 +121,7 @@ $items = $stmt->fetchAll();
     <header id="heroSection" class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative z-10 text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg" data-i18n="heroTitle">Delicious Food,<br>Delivered Fast.</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg" data-i18n="heroTitle">Taste the Tradition, <br> Scan the Future.</h2>
             <p class="text-gray-200 text-lg mb-6" data-i18n="heroSubtitle">Scan, Order, Enjoy.</p>
             <button onclick="scrollToMenu()" class="bg-primary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95">
                 <span data-i18n="viewMenuBtn">View Menu</span> <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
@@ -208,7 +178,7 @@ $items = $stmt->fetchAll();
                             </div>
                             
                             <button class="mt-4 w-full bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white text-gray-800 dark:text-gray-200 font-semibold py-2.5 rounded-lg transition flex items-center justify-center gap-2 transform hover:scale-[1.02] active:scale-[0.98]">
-                                <i class="fas fa-plus"></i> <span data-i18n="addToOrder">Add</span>
+                                 <span data-i18n="addToOrder">Order</span>
                             </button>
                         </div>
                     </div>
@@ -235,41 +205,74 @@ $items = $stmt->fetchAll();
         <div class="max-w-4xl mx-auto px-4 py-6 text-center">
             <p class="text-sm text-gray-500 dark:text-gray-400">
                 &copy; 2026 QR Menu. <br>
-                <span data-i18n="footerText">Made with ❤️ for hungry customers.</span>
+                <span data-i18n="footerText">Made by Panda Kitchen</span>
             </p>
         </div>
     </footer>
 
     <!-- ================= JAVASCRIPT LOGIC ================= -->
     <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        primary: '#FF9F1C', 
+                        secondary: '#2EC4B6', 
+                        darkBg: '#1a1a1a',
+                        lightBg: '#f8f9fa'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.4s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'slide-in': 'slideIn 0.3s ease-out'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
         // --- TRANSLATIONS ---
         const translations = {
             en: {
-                heroTitle: "Delicious Food,<br>Delivered Fast.",
+                heroTitle: "Taste the Tradition, <br> Scan the Future.",
                 heroSubtitle: "Scan, Order, Enjoy.",
                 viewMenuBtn: "View Menu",
                 noItems: "No items found.",
-                footerText: "Made with ❤️ for hungry customers.",
+                footerText: "Made by Panda Kitchen",
                 catAll: "All",
                 catBurgers: "Burgers",
                 catPizzas: "Pizzas", 
-                catBurritos: "Burritos",
+                catDesserts: "Desserts",
                 catHot: "Hot Drinks",
-                catSoft: "Soft Drinks",
-                addToOrder: "Add"
+                catCold: "Cold Drinks",
+                addToOrder: "Order"
             },
             am: {
-                heroTitle: "ጣፋጭ ምግብ,<br>በፍጥነት ይደርስዎታል።",
+                heroTitle: "ባህሉን ቅመሱ,<br>የወደፊቱን ይቃኙ።",
                 heroSubtitle: "ያንብቡ፣ ያዙ፣ ይውሰዱ።",
                 viewMenuBtn: "ሜኑ ይመልከቱ",
                 noItems: "ምንም አይተኛ አልተገኘም።",
-                footerText: "ለጠመዱ ደንበኞች በፍቅር የተሰራ።",
+                footerText: "በፓንዳ ኩሽና የተሰራ።",
                 catAll: "ሁሉም",
                 catBurgers: "በርገሮች",
                 catPizzas: "ፒዛዎች",
-                catBurritos: "ቡሪቶዎች", 
+                catDesserts: "ጣፋጭ ምግቦች", 
                 catHot: "ሞቃት መጠጦች",
-                catSoft: "ቀዝቃዛ መጠጦች",
+                catCold: "ቀዝቃዛ መጠጦች",
                 addToOrder: "ያክሉ"
             }
         };
@@ -313,9 +316,9 @@ $items = $stmt->fetchAll();
                 { id: 'all', label: translations[currentLang].catAll },
                 { id: 'burgers', label: translations[currentLang].catBurgers },
                 { id: 'pizza', label: translations[currentLang].catPizzas },
-                { id: 'burritos', label: translations[currentLang].catBurritos },
+                { id: 'desserts', label: translations[currentLang].catDesserts },
                 { id: 'hot_drinks', label: translations[currentLang].catHot },
-                { id: 'soft_drinks', label: translations[currentLang].catSoft }
+                { id: 'cold_drinks', label: translations[currentLang].catCold }
             ];
 
             const container = document.getElementById('categoryContainer');

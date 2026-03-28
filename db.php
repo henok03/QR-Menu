@@ -1,7 +1,7 @@
 <?php
 $host = '127.0.0.1'; // Replace 3307 with the number you see next to MySQL in XAMPP
 $db   = 'qr-menu';
-$port = '3311'; // Matches your phpMyAdmin screenshot
+$port = '3306'; // Matches your phpMyAdmin screenshot
 $user = 'root';
 $pass = ''; 
 
