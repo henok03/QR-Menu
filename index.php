@@ -9,6 +9,7 @@ $items = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>QR Menu</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -133,7 +134,7 @@ $items = $stmt->fetchAll();
         </div>
 
         <!-- PHP Food Items Loop -->
-        <div id="foodGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div id="foodGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 max-w-4xl mx-auto">
             
             <?php if (!empty($items)): ?>
                 <?php foreach ($items as $index => $item): ?>
@@ -161,7 +162,8 @@ $items = $stmt->fetchAll();
                             <div>
                                 <h3 class="font-bold text-lg mb-1 text-gray-800 dark:text-white">
                                     <?php echo htmlspecialchars($item['name']); ?>
-                                </h3>
+                                </h3>   
+                            
                                 <p class="text-xs text-primary uppercase tracking-wide mb-2 font-semibold">
                                     <?php echo htmlspecialchars($item['category']); ?>
                                 </p>
@@ -169,6 +171,7 @@ $items = $stmt->fetchAll();
                                     <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                                         <?php echo htmlspecialchars($item['description']); ?>
                                     </p>
+        
                                 <?php endif; ?>
                             </div>
                             
