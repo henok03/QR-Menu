@@ -77,45 +77,40 @@ $items = $stmt->fetchAll();
 </head>
 <body class="bg-lightBg text-gray-800 dark:bg-darkBg dark:text-gray-100 min-h-screen flex flex-col">
 
-    <!-- ================= NAVIGATION ================= -->
-    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm px-4 py-3">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-primary tracking-tighter">
-     <img src="Gemini_Generated_Image_jl53kgjl53kgjl53-removebg-preview.png" 
-     alt="PandaKitchen Logo" 
-     style="height: 40px; width: auto; object-fit: contain;">
-     
-Panda<span class="text-gray-800 dark:text-white">Kitchen</span>
-            </h1>
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm px-4 py-3">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+        
+        <h1 class="flex items-center gap-2 text-xl font-bold text-primary tracking-tighter">
+            <img src="Gemini_Generated_Image_jl53kgjl53kgjl53-removebg-preview.png" 
+                 alt="PandaKitchen Logo" 
+                 style="height: 40px; width: auto; object-fit: contain;">
+            <span>Panda<span class="text-gray-800 dark:text-white">Kitchen</span></span>
+        </h1>
+
+        <div class="flex items-center gap-3">
+            <button onclick="toggleSearch()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition transform hover:scale-110">
+                <i class="fas fa-search"></i>
+            </button>
             
-            <div class="flex items-center gap-3">
-                <!-- Search Trigger -->
-                <button onclick="toggleSearch()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition transform hover:scale-110">
-                    <i class="fas fa-search"></i>
-                </button>
-                
-                <!-- Language Switcher -->
-                <select id="langSwitch" onchange="changeLanguage()" class="bg-transparent border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-                    <option value="en" style="color: goldenrod;">EN</option>
-                    <option value="am" style="color: goldenrod;">አማ</option>
-                </select>
+            <select id="langSwitch" onchange="changeLanguage()" class="bg-transparent border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                <option value="en" class="text-amber-500">EN</option>
+                <option value="am" class="text-amber-500">አማ</option>
+            </select>
 
-                <!-- Dark Mode Toggle -->
-                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition transform hover:scale-110">
-                    <i id="themeIcon" class="fas fa-moon"></i>
-                </button>
-            </div>
+            <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition transform hover:scale-110">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
         </div>
+    </div>
 
-        <!-- Search Bar -->
-        <div id="searchContainer" class="hidden max-w-4xl mx-auto mt-3 px-2">
-            <div class="relative">
-                <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Search food..." 
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:outline-none transition-all">
-                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            </div>
+    <div id="searchContainer" class="hidden max-w-4xl mx-auto mt-3 px-2">
+        <div class="relative">
+            <input type="text" id="searchInput" onkeyup="filterMenu()" placeholder="Search food..." 
+                class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:outline-none transition-all">
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- ================= HERO SECTION ================= -->
     <header id="heroSection" class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
@@ -138,7 +133,7 @@ Panda<span class="text-gray-800 dark:text-white">Kitchen</span>
         </div>
 
         <!-- PHP Food Items Loop -->
-        <div id="foodGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div id="foodGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <?php if (!empty($items)): ?>
                 <?php foreach ($items as $index => $item): ?>
@@ -177,9 +172,7 @@ Panda<span class="text-gray-800 dark:text-white">Kitchen</span>
                                 <?php endif; ?>
                             </div>
                             
-                            <button class="mt-4 w-full bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white text-gray-800 dark:text-gray-200 font-semibold py-2.5 rounded-lg transition flex items-center justify-center gap-2 transform hover:scale-[1.02] active:scale-[0.98]">
-                                 <span data-i18n="addToOrder">Order</span>
-                            </button>
+                            
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -404,6 +397,7 @@ Panda<span class="text-gray-800 dark:text-white">Kitchen</span>
             }
         }
 
+        
         // --- INITIALIZATION ---
         window.addEventListener('DOMContentLoaded', () => {
             // Load saved theme
