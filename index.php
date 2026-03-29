@@ -82,10 +82,10 @@ $items = $stmt->fetchAll();
     <div class="max-w-4xl mx-auto flex justify-between items-center">
         
         <h1 class="flex items-center gap-2 text-xl font-bold text-primary tracking-tighter">
-            <img src="Gemini_Generated_Image_jl53kgjl53kgjl53-removebg-preview.png" 
-                 alt="PandaKitchen Logo" 
+            <img src="photo_2026-03-29_14-22-48-removebg-preview.png" 
+                 alt="ShegaKitchen Logo" 
                  style="height: 40px; width: auto; object-fit: contain;">
-            <span>Panda<span class="text-gray-800 dark:text-white">Kitchen</span></span>
+            <span>Shega<span class="text-gray-800 dark:text-white">Kitchen</span></span>
         </h1>
 
         <div class="flex items-center gap-3">
@@ -117,7 +117,7 @@ $items = $stmt->fetchAll();
     <header id="heroSection" class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative z-10 text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg" data-i18n="heroTitle">Taste the Tradition, <br> Scan the Future.</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg" data-i18n="heroTitle">Fast Menu, <br> Fast Food.</h2>
             <p class="text-gray-200 text-lg mb-6" data-i18n="heroSubtitle">Scan, Order, Enjoy.</p>
             <button onclick="scrollToMenu()" class="bg-primary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95">
                 <span data-i18n="viewMenuBtn">View Menu</span> <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
@@ -201,7 +201,7 @@ $items = $stmt->fetchAll();
         <div class="max-w-4xl mx-auto px-4 py-6 text-center">
             <p class="text-sm text-gray-500 dark:text-gray-400">
                 &copy; 2026 QR Menu. <br>
-                <span data-i18n="footerText">Made by Panda Kitchen</span>
+                <span data-i18n="footerText">Made by Shega Kitchen</span>
             </p>
         </div>
     </footer>
@@ -244,11 +244,11 @@ $items = $stmt->fetchAll();
         // --- TRANSLATIONS ---
         const translations = {
             en: {
-                heroTitle: "Taste the Tradition, <br> Scan the Future.",
+                heroTitle: "Fast Menu, <br> Fast Food.",
                 heroSubtitle: "Scan, Order, Enjoy.",
                 viewMenuBtn: "View Menu",
                 noItems: "No items found.",
-                footerText: "Made by Panda Kitchen",
+                footerText: "Made by Shega Kitchen",
                 catAll: "All",
                 catBurgers: "Burgers",
                 catPizzas: "Pizzas", 
@@ -258,18 +258,18 @@ $items = $stmt->fetchAll();
                 addToOrder: "Order"
             },
             am: {
-                heroTitle: "ባህሉን ቅመሱ,<br>የወደፊቱን ይቃኙ።",
+                heroTitle: "ፈጣን ዝርዝር,<br>ፈጣን ምግብ።",
                 heroSubtitle: "ያንብቡ፣ ያዙ፣ ይውሰዱ።",
                 viewMenuBtn: "ሜኑ ይመልከቱ",
                 noItems: "ምንም አይተኛ አልተገኘም።",
-                footerText: "በፓንዳ ኩሽና የተሰራ።",
+                footerText: "በሸጋ ኩሽና የተሰራ።",
                 catAll: "ሁሉም",
                 catBurgers: "በርገሮች",
                 catPizzas: "ፒዛዎች",
                 catDesserts: "ጣፋጭ ምግቦች", 
                 catHot: "ሞቃት መጠጦች",
                 catCold: "ቀዝቃዛ መጠጦች",
-                addToOrder: "ያክሉ"
+                addToOrder: "እዘዝ"
             }
         };
 
