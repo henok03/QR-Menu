@@ -22,6 +22,9 @@ $items = $stmt->fetchAll();
     
     <style>
         body { transition: background-color 0.3s, color 0.3s; }
+
+
+        
         .food-card { 
             transition: transform 0.2s, box-shadow 0.2s; 
             animation: fade-in-up 0.4s ease-out both;
@@ -82,10 +85,10 @@ $items = $stmt->fetchAll();
     <div class="max-w-4xl mx-auto flex justify-between items-center">
         
         <h1 class="flex items-center gap-2 text-xl font-bold text-primary tracking-tighter">
-            <img src="photo_2026-03-29_14-22-48-removebg-preview.png" 
+            <img src="Gemini_Generated_Image_4u29we4u29we4u29-removebg-preview.png" 
                  alt="ShegaKitchen Logo" 
-                 style="height: 40px; width: auto; object-fit: contain;">
-            <span>Shega<span class="text-gray-800 dark:text-white">Kitchen</span></span>
+                 style="display: block; height: 40px; width: auto; object-fit: contain;">
+            <span>Time<span class="text-gray-800 dark:text-white">Burger</span></span>
         </h1>
 
         <div class="flex items-center gap-3">
@@ -119,7 +122,7 @@ $items = $stmt->fetchAll();
         <div class="relative z-10 text-center px-4">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg" data-i18n="heroTitle">Fast Menu, <br> Fast Food.</h2>
             <p class="text-gray-200 text-lg mb-6" data-i18n="heroSubtitle">Scan, Order, Enjoy.</p>
-            <button onclick="scrollToMenu()" class="bg-primary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95">
+            <button onclick="scrollToMenu()" class="bg-primary hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95">
                 <span data-i18n="viewMenuBtn">View Menu</span> <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
             </button>
         </div>
@@ -201,7 +204,7 @@ $items = $stmt->fetchAll();
         <div class="max-w-4xl mx-auto px-4 py-6 text-center">
             <p class="text-sm text-gray-500 dark:text-gray-400">
                 &copy; 2026 QR Menu. <br>
-                <span data-i18n="footerText">Made by Shega Kitchen</span>
+                <span data-i18n="footerText">Made by Time Burger</span>
             </p>
         </div>
     </footer>
@@ -214,7 +217,7 @@ $items = $stmt->fetchAll();
                 extend: {
                     fontFamily: { sans: ['Poppins', 'sans-serif'] },
                     colors: {
-                        primary: '#FF9F1C', 
+                        primary: '#09b111', 
                         secondary: '#2EC4B6', 
                         darkBg: '#1a1a1a',
                         lightBg: '#f8f9fa'
@@ -248,7 +251,7 @@ $items = $stmt->fetchAll();
                 heroSubtitle: "Scan, Order, Enjoy.",
                 viewMenuBtn: "View Menu",
                 noItems: "No items found.",
-                footerText: "Made by Shega Kitchen",
+                footerText: "Made by Time Burger.",
                 catAll: "All",
                 catBurgers: "Burgers",
                 catPizzas: "Pizzas", 
@@ -262,7 +265,7 @@ $items = $stmt->fetchAll();
                 heroSubtitle: "ያንብቡ፣ ያዙ፣ ይውሰዱ።",
                 viewMenuBtn: "ሜኑ ይመልከቱ",
                 noItems: "ምንም አይተኛ አልተገኘም።",
-                footerText: "በሸጋ ኩሽና የተሰራ።",
+                footerText: "በታይም በርገር የተሰራ።",
                 catAll: "ሁሉም",
                 catBurgers: "በርገሮች",
                 catPizzas: "ፒዛዎች",
