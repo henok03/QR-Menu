@@ -84,11 +84,11 @@ $items = $stmt->fetchAll();
 <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm px-4 py-3">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
         
-        <h1 class="flex items-center gap-2 text-xl font-bold text-primary tracking-tighter">
-            <img src="Gemini_Generated_Image_4u29we4u29we4u29-removebg-preview.png" 
-                 alt="ShegaKitchen Logo" 
-                 style="display: block; height: 40px; width: auto; object-fit: contain;">
-            <span>Time<span class="text-gray-800 dark:text-white">Burger</span></span>
+        <h1 class="flex items-center gap-1 text-xl font-bold text-primary tracking-tighter">
+            <img src="Gemini_Generated_Image_6y63yk6y63yk6y63-removebg-preview.png" 
+                 alt="PandaKitchen Logo" 
+                 style="display: block; height: 40px; width: 100px; object-fit: contain;">
+            <span>Panda<span class="text-gray-800 dark:text-white">Kitchen</span></span>
         </h1>
 
         <div class="flex items-center gap-3">
@@ -204,7 +204,7 @@ $items = $stmt->fetchAll();
         <div class="max-w-4xl mx-auto px-4 py-6 text-center">
             <p class="text-sm text-gray-500 dark:text-gray-400">
                 &copy; 2026 QR Menu. <br>
-                <span data-i18n="footerText">Made by Time Burger</span>
+                <span data-i18n="footerText">Made by Panda Kitchen</span>
             </p>
         </div>
     </footer>
