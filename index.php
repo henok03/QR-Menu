@@ -345,7 +345,7 @@ $items = $stmt->fetchAll();
     <div class="max-w-4xl mx-auto flex justify-between items-center">
         
         <h1 class="flex items-center gap-1 text-xl font-bold text-primary tracking-tighter">
-            <img src="ChatGPT_Image_May_23__2026__10_01_59_AM-removebg-preview.png" 
+            <img src="ChatGPT Image May 23, 2026, 10_01_59 AM.png" 
                  alt="QrMenu Logo" 
                  style="display: block; height: 50px; width: 100px; object-fit: contain;">
             <span>QR<span class="text-gray-800 dark:text-white">Menu</span></span>
